@@ -3,7 +3,7 @@ const input = document.querySelector("#location-input");
 let box = document.querySelector("#result-box");
 
 window.onload = async function () {
-  await callApi();
+  await callApi(`Egypt`);
   display();
 };
 
@@ -12,12 +12,12 @@ input.addEventListener(
   debounce(async function (e) {
     e.preventDefault();
     await callApi(input.value);
-  }, 200)
+  }, 500)
 );
 
 let allData = [];
 
-async function callApi(country) {
+async function callApi(country= `Egypt`) {
   try {
     const call = await fetch(
       `https://api.weatherapi.com/v1/current.json?key=80b139eb683a4661833211428240612&q=${country}&aqi=no`
