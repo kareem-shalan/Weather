@@ -20,7 +20,7 @@ let allData = [];
 async function callApi(country) {
   try {
     const call = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=80b139eb683a4661833211428240612&q=${country}&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=80b139eb683a4661833211428240612&q=${country}&aqi=no`
     );
     if (!call.ok) {
       throw new Error("Network response was not ok");
